@@ -14,7 +14,6 @@
     "verified": 12,
     "maximum": 12
   },
-  "esmodules": [ "slugblaster.mjs" ],
   "styles": [ "styles/slugblaster.css" ],
   "languages": [
     {
@@ -27,10 +26,5 @@
   "grid": {
     "distance": 10,
     "units": "Meter"
-  },
-  "primaryTokenAttribute": "resources.health",
-  "secondaryTokenAttribute": "resources.power",
-  "url": "https://your/hosted/system/repo/",
-  "manifest": "https://your/hosted/system/repo/system.json",
-  "download": "https://your/packaged/download/archive.zip"
+  }
 }
