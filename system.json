@@ -26,5 +26,7 @@
   "grid": {
     "distance": 10,
     "units": "Meter"
-  }
+  },
+    "url": "https://github.com/EmberLeaves/slugblaster/",
+    "manifest": "https://github.com/EmberLeaves/slugblaster/blob/main/system.json"
 }
