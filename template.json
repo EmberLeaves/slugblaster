@@ -1,0 +1,32 @@
+{
+    "Actor": {
+
+        "type": [
+            "PlayerCharacter"
+        ],
+        "PlayerCharacter": {
+            "race": "Elf",
+            "gender": "male",
+            "age": "23",
+            "height": "140",
+            "weigt": "75"
+        }
+    },
+    "Item": {
+        "types": [
+            "Item"
+        ],
+        "templates": {
+            "generalItem": {
+                "weight": 10,
+                "valute": 100,
+                "description": ""
+            }
+        },
+        "Item": {
+            "templates": ["generalItem"],
+            "type": "item",
+            "quantity": 1
+        }
+    }
+}
