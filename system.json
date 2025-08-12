@@ -19,7 +19,7 @@
   "esmodules": [
     "slugblaster.js"
   ],
-  "styles": [ "styles/slugblaster.css" ],
+  "styles": [ "slugblaster.css" ],
   "languages": [
     {
       "lang": "en",
