@@ -1,0 +1,36 @@
+{
+  "id": "slugblaster",
+  "title": "Slugblaster",
+  "description": "Port of system from Roll20",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "me",
+      "discord": "emberthefierycat"
+    }
+  ],
+  "compatibility": {
+    "minimum": 12,
+    "verified": 12,
+    "maximum": 12
+  },
+  "manifest": "https://raw.githubusercontent.com/EmberLeaves/slugblaster/main/system.json",
+  "download": "https://github.com/EmberLeaves/slugblaster/archive/refs/heads/main.zip",
+  "esmodules": [
+    "slugblaster.js"
+  ],
+  "styles": [ "styles/slugblaster.css" ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": false,
+  "grid": {
+    "distance": 10,
+    "units": "Meter"
+  },
+    "url": "https://github.com/EmberLeaves/slugblaster/"
+}
