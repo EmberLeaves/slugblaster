@@ -14,7 +14,6 @@
     "verified": 12,
     "maximum": 12
   },
-  "manifest": "https://raw.githubusercontent.com/EmberLeaves/slugblaster/main/system.json",
   "download": "https://github.com/EmberLeaves/slugblaster/archive/refs/heads/main.zip",
   "esmodules": [
     "slugblaster.js"
