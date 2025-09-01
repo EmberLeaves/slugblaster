@@ -2,14 +2,20 @@
     "Actor": {
 
         "type": [
-            "PlayerCharacter"
+            "Character"
         ],
-        "PlayerCharacter": {
-            "race": "Elf",
-            "gender": "male",
-            "age": "23",
-            "height": "140",
-            "weigt": "75"
+
+        "Character": {
+            "Personality": 0,
+
+            "charDetails": {
+                "Name": "Test",
+                "Look": "All black, muted, chains",
+                "Family": "Strict",
+                "Bond": "Natural Chemistry",
+                "Vibes": "Space Cadet",
+                "Stickers, ETC...": "'Skate and/or Die' besides a cat in a box"
+            }
         }
     },
     "Item": {
