@@ -1,16 +1,9 @@
 {
     "Actor": {
 
-        "type": [
+        "types": [
             "Character"
         ],
-        "templates": {
-            "generalItem": {
-                "weight": 10,
-                "valute": 100,
-                "description": ""
-            }
-        },
         "Character": {
             "Personality": 0,
 
