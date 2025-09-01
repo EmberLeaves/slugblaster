@@ -1,5 +1,7 @@
 // Import config file
 import { SLUGBLASTER } from "./modules/config.js";
+import slugblasterActor from "./modules/objects/slugblasterActor.js";
+import slugblasterCharacterSheet from "./modules/sheets/slugblasterCharacterSheet.js";
 
 Hooks.once("init", async () => {
     console.log("SLUGBLASTER | Initializing Slugblaster system");
@@ -7,10 +9,14 @@ Hooks.once("init", async () => {
     // Setting up the Global Configuration Object
     CONFIG.SLUGBLASTER = SLUGBLASTER;
     CONFIG.INIT = true;
+    CONFIG.Actor.documentClass = slugblasterActor;
 
     // Register custom Sheets and unregister the start Sheets
     // Itms.unregisterSheet("core", ItemSheet);
-    // Actors.unregisterSheet("core", ActorSheet);
+
+    const DocumentSheetConfig = foundry.applications.apps.DocumentSheetConfig;
+    DocumentSheetConfig.unregisterSheet(Actor, "core", foundry.appv1.sheets.ActorSheet);
+    DocumentSheetConfig.registerSheet(Actor, "slugblaster", slugblasterCharacterSheet, {types: ["character"], makeDefault: true, label: "SLUGBLASTER.SheetClassCharacter"});
 
     // Load all Partial-Handlebar Files
     preloadHandlebarsTemplates();
@@ -19,12 +25,25 @@ Hooks.once("init", async () => {
     registerHandelbarsHelpers();
 });
 
+Hooks.once("ready", async () => {
+    // Finished Initalization Phase and release lock
+    CONFIG.INIT = false;
+
+    // Only execute when run as GM
+    if(!game.user.isGM)
+        return;
+});
+
 function preloadHandlebarsTemplates() {
     const templatePaths = [
-        // "systems/slugblaster/templates/partials/template.hbs"
+        "systems/slugblaster/templates/partials/character-sheet-character.hbs",
+        "systems/slugblaster/templates/partials/character-sheet-background.hbs",
+        "systems/slugblaster/templates/partials/character-sheet-skill.hbs",
+        "systems/slugblaster/templates/partials/character-sheet-combat.hbs",
+        "systems/slugblaster/templates/partials/character-sheet-progression.hbs"
     ];
 
-    return loadTemplates(templatePaths);
+    return foundry.applications.Handlebars.loadTemplates(templatePaths);
 };
 
 function registerHandelbarsHelpers() {

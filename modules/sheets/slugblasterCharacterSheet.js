@@ -10,6 +10,10 @@ export default class slugblasterCharacterSheet extends api.HandlebarsApplication
         actions: {
 
         },
+        form: {
+            submitOnChange: true,
+            closeOnSubmit: false,
+        },
         position: {
             width: 650
         }
@@ -22,5 +26,50 @@ export default class slugblasterCharacterSheet extends api.HandlebarsApplication
 
     get title() {
         return this.actor.name;
+    }
+
+    /** @override */
+    _configureRenderOptions(options) {
+        super._configureRenderOptions(options);
+
+        // If only limited view, only header
+        if (this.document.limited)
+            options.parts = ["header"]
+        else
+            options.parts = ["header", "sidebar"]
+    }
+
+    /** @override */
+    async _prepareContext(options) {
+        // Creates basic datamodel, which is used to fill the HTML together with Handelbars with Data
+
+        const baseData = await super._prepareContext();
+
+        const context = {
+            // Set General Values
+            owner: baseData.document.isOwner,
+            editable: baseData.editable,
+            actor: baseData.document,
+            system: baseData.document.system,
+            items: baseData.document.items,
+            config: CONFIG.SLUGBLASTER,
+            isGM: baseData.user.isGM,
+            effects: baseData.document.effects,
+        }
+
+        this.sheetContext = context;
+
+        return context;
+    }
+
+    /** @override */
+    // One of last metheds exectuted when showing sheet
+    _onRender(context, options) {
+        // Setting up tabs
+        const tabs = new foundry.applications.ux.Tabs({navSelector: ".tabs", contentSelector: ".content", initial: "tab1"});
+        tabs.bind(this.element);
+
+        const tabs2 = new foundry.applications.ux.Tabs({navSelector: ".tabs2", contentSelector: ".content", initial: "tab2-1"});
+        tabs2.bind(this.element);
     }
 }
