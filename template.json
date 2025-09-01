@@ -2,7 +2,9 @@
     "Actor": {
 
         "types": [
-            "Character"
+            "Character",
+            "NPC",
+            "Crew"
         ],
         "Character": {
             "Personality": 0,
@@ -15,6 +17,10 @@
                 "Vibes": "Space Cadet",
                 "Stickers, ETC...": "'Skate and/or Die' besides a cat in a box"
             }
+        },
+        "NPC": {
+        },
+        "Crew": {
         }
     },
     "Item": {
