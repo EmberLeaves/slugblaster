@@ -11,8 +11,8 @@
   ],
   "compatibility": {
     "minimum": 12,
-    "verified": 12,
-    "maximum": 12
+    "verified": 13,
+    "maximum": 13
   },
   "manifest": "https://raw.githubusercontent.com/EmberLeaves/slugblaster/main/system.json",
   "download": "https://github.com/EmberLeaves/slugblaster/archive/refs/heads/main.zip",
